@@ -10,7 +10,7 @@ const router = createRouter({
   history:history,
   routes: [
     {path:'/', component: Home}, //访问'/'路径时，显示Frank组件
-    {path: '/xxx', component: Doc}
+    {path: '/doc', component: Doc}
   ]
 })
 const app = createApp(App)//创建app实例，并且传入app组件作为参数
