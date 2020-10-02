@@ -25,20 +25,23 @@
 </template>
 
 <script lang="ts">
-import TopNav from '../components/topNav.vue';
+import TopNav from '../components/topNav.vue'; //引入公共组件
 import {
   inject,
   Ref
-} from 'vue';
+} from 'vue'
 export default {
   setup() {
     const asideVisible = inject < Ref < boolean >> ('xxx')
     //相当于get，<Ref<boolean>>定义类型
     console.log('Doc aside 获取的asideVisible 为:' + asideVisible.value)
+    const toggleMenu = () => {
+      asideVisible.value = !asideVisible.value
+    }
     return {
       asideVisible
     }
-  }
+  },
   components: {
     TopNav
   }

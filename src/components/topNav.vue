@@ -19,11 +19,11 @@ export default {
     const asideVisible = inject < Ref < boolean >> ('xxx')
     //相当于get，<Ref<boolean>>定义类型
     console.log('topnav 获取的menuVisible 为:' + asideVisible.value)
-    const toggleAside = () => {
-      asideVisible = !asideVisible
+    const toggleMenu = () => {
+      asideVisible.value = !asideVisible.value
     }
-    reutrn {
-      toggleAside
+    return {
+      toggleMenu
     }
   }
 }
