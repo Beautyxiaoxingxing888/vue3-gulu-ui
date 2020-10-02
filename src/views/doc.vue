@@ -6,7 +6,7 @@
       <h2>组件列表</h2>
       <ol>
         <li>
-          <router-link to="/doc/switch">Switch 组件</router-link>
+          <router-link to="/doc/switch">Switch组件</router-link>
         </li>
         <li>
           <router-link to="/doc/button">Button组件</router-link>
@@ -25,8 +25,20 @@
 </template>
 
 <script lang="ts">
-import TopNav from '../components/topNav.vue'
+import TopNav from '../components/topNav.vue';
+import {
+  inject,
+  Ref
+} from 'vue';
 export default {
+  setup() {
+    const asideVisible = inject < Ref < boolean >> ('xxx')
+    //相当于get，<Ref<boolean>>定义类型
+    console.log('Doc aside 获取的asideVisible 为:' + asideVisible.value)
+    return {
+      asideVisible
+    }
+  }
   components: {
     TopNav
   }
